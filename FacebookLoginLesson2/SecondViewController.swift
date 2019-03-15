@@ -13,10 +13,11 @@ import FBSDKLoginKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var currentUserName: UILabel!
+    @IBOutlet weak var currentUserEmail: UILabel!
     
     func returnUserDate() {
         let graphPath = "me"
-        let parameters = ["fields": "id, name"]
+        let parameters = ["fields": "id, name, email"]
         let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: parameters)
         
         let connection = FBSDKGraphRequestConnection()
@@ -30,6 +31,10 @@ class SecondViewController: UIViewController {
                 
                 if let username = result["name"] as? String {
                     self.currentUserName.text = username
+                }
+                
+                if let email = result["email"] as? String {
+                    self.currentUserEmail.text = email
                 }
             }
         })

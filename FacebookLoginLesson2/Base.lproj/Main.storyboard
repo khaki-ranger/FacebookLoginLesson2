@@ -42,9 +42,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-jJ-hYd">
-                                <rect key="frame" x="116" y="376" width="142" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-jJ-hYd">
+                                <rect key="frame" x="149" y="366.5" width="76" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVh-GS-Oq3">
+                                <rect key="frame" x="167" y="407" width="41" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -52,12 +57,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="t1l-jJ-hYd" firstAttribute="centerX" secondItem="9GA-C3-Sxb" secondAttribute="centerX" id="6Jl-Q6-RzL"/>
                             <constraint firstItem="WSo-My-Tg4" firstAttribute="centerY" secondItem="9GA-C3-Sxb" secondAttribute="centerY" id="GuO-G1-QcK"/>
+                            <constraint firstItem="HVh-GS-Oq3" firstAttribute="top" secondItem="t1l-jJ-hYd" secondAttribute="bottom" constant="20" id="Ihx-sJ-R2f"/>
                             <constraint firstItem="WSo-My-Tg4" firstAttribute="centerX" secondItem="9GA-C3-Sxb" secondAttribute="centerX" id="Pql-Hf-dd5"/>
+                            <constraint firstItem="t1l-jJ-hYd" firstAttribute="top" secondItem="WSo-My-Tg4" secondAttribute="bottom" constant="20" id="aAC-Oa-CZb"/>
+                            <constraint firstItem="HVh-GS-Oq3" firstAttribute="centerX" secondItem="9GA-C3-Sxb" secondAttribute="centerX" id="gy6-kb-Th6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rIQ-wJ-Ze2"/>
                     </view>
                     <connections>
+                        <outlet property="currentUserEmail" destination="HVh-GS-Oq3" id="3cs-B9-Pg1"/>
                         <outlet property="currentUserName" destination="t1l-jJ-hYd" id="C5J-5s-OFi"/>
                     </connections>
                 </viewController>
