@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var currentUserName: UILabel!
+    
+    func returnUserDate() {
+        let graphPath = "me"
+        let parameters = ["fields": "id, name"]
+        let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: parameters)
+        
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(graphRequest, completionHandler: { (connection, result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("エラーなし")
+                if let result = result {
+                    print(result)
+                }
+            }
+        })
+        connection.start()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("画面遷移しました")
+        returnUserDate()
     }
 
     override func didReceiveMemoryWarning() {
