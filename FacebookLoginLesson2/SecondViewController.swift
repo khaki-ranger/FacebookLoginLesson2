@@ -24,9 +24,12 @@ class SecondViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                print("エラーなし")
-                if let result = result {
-                    print(result)
+                guard let result = result as? [String: Any] else {
+                    return
+                }
+                
+                if let username = result["name"] as? String {
+                    self.currentUserName.text = username
                 }
             }
         })
